@@ -1,0 +1,39 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "houyunting/multi-client",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "houyunting/multi-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "workder",
+            "image": "houyunting/multi-worder",
+            "hostname": "worder",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "houyunting/multi-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": [
+                "client",
+                "server"
+            ]
+        }
+    ]
+}

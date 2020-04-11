@@ -17,8 +17,22 @@ after_success:
 
     # Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
     # Take those images and push them to docker hub
     - docker push houyunting/multi-client
     - docker push houyunting/multi-nginx
     - docker push houyunting/multi-server
     - docker push houyunting/multi-worker
+
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: "us-west-1"
+    app: "multi-docker"
+    env: "MultiDocker-env"
+    bucket_name: "elasticbeanstalk-us-west-1-840367840723"
+    bucket_path: "multi-docker"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
