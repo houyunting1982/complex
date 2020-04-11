@@ -15,7 +15,7 @@
         },
         {
             "name": "workder",
-            "image": "houyunting/multi-worder",
+            "image": "houyunting/multi-worker",
             "hostname": "worder",
             "essential": false
         },
