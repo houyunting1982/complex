@@ -28,8 +28,8 @@ deploy:
     edge: true
     provider: elasticbeanstalk
     region: "us-west-1"
-    app: "multi-docker"
-    env: "MultiDocker-env"
+    app: "multi-docker-new"
+    env: "MultiDockerNew-env"
     bucket_name: "elasticbeanstalk-us-west-1-840367840723"
     bucket_path: "multi-docker"
     on:
