@@ -14,9 +14,9 @@
             "essential": false
         },
         {
-            "name": "workder",
+            "name": "worker",
             "image": "houyunting/multi-worker",
-            "hostname": "worder",
+            "hostname": "worker",
             "essential": false
         },
         {
